@@ -1,8 +1,8 @@
 #Source: 
 #https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true
 
-#date: 2025-06-19
-#solved: no
+#date: 2026-06-20
+#solved: yes
 
 #!/bin/python3
 
@@ -25,10 +25,16 @@ def compareTriplets(a, b):
     ascore = 0
     bscore = 0
 
-    if a > b:
-        ascore+=1
-    elif a < b:
-        bscore+=1
+    length = len(a)
+    
+    for i in range(length):
+        if a[i] > b[i]:
+            ascore+=1
+        elif a[i] < b[i]:
+            bscore+=1
+        
+    return [ascore, bscore]
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
